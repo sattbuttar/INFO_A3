@@ -97,7 +97,7 @@ export default class Game{
                     sReply = "Old man: It is more than 10 minutes! HAHAHAHA! Shots his Gun!";
                 }else{
                     sReply = "Communication can help you to get out! Say HELLO to the man.";
-                    this.stateCur = GameState.WELCOMING;
+                    this.stateCur = GameState.HELLO;
                 }break;
            
             }   

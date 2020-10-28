@@ -8,6 +8,7 @@ const GameState = Object.freeze({
     LOOK: Symbol("look"),
     SOUND: Symbol("sound"),
     KITCHEN: Symbol("kitchen"),
+    HELLO: Symbol("hello")
 
 });
 
@@ -94,7 +95,6 @@ export default class Game{
                 case GameState.HELLO:
                     if(sInput.toLowerCase().match("hello")){
                         sReply = "Old man: It is more than 10 minutes! HAHAHAHA! Shots his Gun!";
-                        this.stateCur = GameState.HELLO;
                     }else{
                         sReply = "Communication can help you to get out! Say HELLO to the man.";
                         this.stateCur = GameState.HELLO;

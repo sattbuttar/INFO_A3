@@ -1,7 +1,6 @@
 const GameState = Object.freeze({
     WELCOMING:   Symbol("welcoming"),
     FLAT:  Symbol("flat"),
-    WAIT: Symbol("wait"),
     MANSION: Symbol("enter"),
     CHEST: Symbol("open"),
     DOLL: Symbol("out"),
@@ -97,7 +96,7 @@ export default class Game{
                         sReply = "Old man: It is more than 10 minutes! HAHAHAHA! Shots his Gun!";
                     }else{
                         sReply = "Communication can help you to get out! Say HELLO to the man.";
-                        this.stateCur = GameState.HELLO;
+                        this.stateCur = GameState.WELCOMING;
                 }
         }
         return([sReply]);

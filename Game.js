@@ -98,9 +98,7 @@ export default class Game{
                 }else{
                     sReply = "Communication can help you to get out! Say HELLO to the man.";
                     this.stateCur = GameState.HELLO;
-                }break;
-           
-            }   
+                }
         }
         return([sReply]);
     }

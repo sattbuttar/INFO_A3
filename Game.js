@@ -67,37 +67,40 @@ export default class Game{
                     sReply = "The treasure chest can be profitable! OPEN?";
                     this.stateCur = GameState.CHEST;
                 }
-                case GameState.LOOK:
+                break;
+            case GameState.LOOK:
                 if(sInput.toLowerCase().match("look")){
                     sReply = "You saw nothing, you are frightened, do you want to follow the SOUND path or NOT?";
                     this.stateCur = GameState.SOUND;
                 }else{
                     sReply = "It can be a ghost, do you want to LOOK?";
                     this.stateCur = GameState.LOOK;
-                }
-                case GameState.SOUND:
+                }break;
+            case GameState.SOUND:
                 if(sInput.toLowerCase().match("sound")){
                     sReply = "The sound is coming from KITCHEN!";
                     this.stateCur = GameState.KITCHEN;
                 }else{
                     sReply = "It can be a ghost, do you want to follow the SOUND?";
                     this.stateCur = GameState.SOUND;
+                }break;
+            case GameState.KITCHEN:
+                if(sInput.toLowerCase().match("kitchen")){
+                    sReply = "You saw an old man walking, say HELLO or HIDE";
+                    this.stateCur = GameState.HELLO;
+                }else{
+                    sReply = "Maybe someone can help you, go to KITCHEN?";
+                    this.stateCur = GameState.KITCHEN;
                 }
-                case GameState.KITCHEN:
-                    if(sInput.toLowerCase().match("kitchen")){
-                        sReply = "You saw an old man walking, say HELLO or HIDE";
-                        this.stateCur = GameState.HELLO;
-                    }else{
-                        sReply = "Maybe someone can help you, go to KITCHEN?";
-                        this.stateCur = GameState.KITCHEN;
-                }
-                case GameState.HELLO:
-                    if(sInput.toLowerCase().match("hello")){
-                        sReply = "Old man: It is more than 10 minutes! HAHAHAHA! Shots his Gun!";
-                    }else{
-                        sReply = "Communication can help you to get out! Say HELLO to the man.";
-                        this.stateCur = GameState.WELCOMING;
-                }
+            case GameState.HELLO:
+                if(sInput.toLowerCase().match("hello")){
+                    sReply = "Old man: It is more than 10 minutes! HAHAHAHA! Shots his Gun!";
+                }else{
+                    sReply = "Communication can help you to get out! Say HELLO to the man.";
+                    this.stateCur = GameState.WELCOMING;
+                }break;
+           
+            }   
         }
         return([sReply]);
     }

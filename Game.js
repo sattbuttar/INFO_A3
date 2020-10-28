@@ -91,7 +91,7 @@ export default class Game{
                 }else{
                     sReply = "Maybe someone can help you, go to KITCHEN?";
                     this.stateCur = GameState.KITCHEN;
-                }
+                }break;
             case GameState.HELLO:
                 if(sInput.toLowerCase().match("hello")){
                     sReply = "Old man: It is more than 10 minutes! HAHAHAHA! Shots his Gun!";
